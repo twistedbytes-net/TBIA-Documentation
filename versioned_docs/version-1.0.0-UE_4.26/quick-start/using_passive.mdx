@@ -22,17 +22,16 @@ parent class from `Character` to `TBIA_GASCharacter` <Step text="2"/>. After cha
 the parent class you can see two new components added <Step text="3"/> and 
 two interface classes are added also <Step text="4"/>.
 
-![Plugin installation using the Epic Games Launcher](_static/img/01_character_parent.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/01_character_parent.png)
 
 For a better third person perspective move the camera to a location like this <Step text="1"/>.
 
-![Plugin installation using the Epic Games Launcher](_static/img/05_character_camera.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/05_character_camera.png)
 
 Also create a socket on the head bone <Step text="1"/>, name it 
 `headSocket` <Step text="2"/> and keep the location to default.
 
-
-![Plugin installation using the Epic Games Launcher](_static/img/06_character_socket.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/06_character_socket.png)
 
 ## Creating the Interact Passive Ability
 
@@ -40,64 +39,72 @@ To create Interact Passive Ability you just need to right click in the
 content browser and go to `TwistedBytes`->`Abilities`->`Interact Passive` 
 like in <Step text="1"/>.
 
-![Plugin installation using the Epic Games Launcher](_static/img/02_create_passive.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/02_create_passive.png)
 
 Open `Interact Passive` blueprint file and it's preferred to use your own trace 
 collision channel and select it <Step text="1"/> set `Trace Start location type` 
 to `Socket on Character's Mesh` <Step text="2"/>, for debugging our ability set 
 `show debug` <Step text="3"/> to true.
 
-![Plugin installation using the Epic Games Launcher](_static/img/03_passive_config.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/03_passive_config.png)
 
 Press play and you should see the trace as in the image below.
 
-![Plugin installation using the Epic Games Launcher](_static/img/07_done.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/07_done.png)
 
 ## Create your first interactable object
 
 To create our first interactable object, in content browser right click and go to 
 `Twistedbytes`->`Actors`->`GAS Actor Base` <Step text="1"/>.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_create_gas_actor.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/08_create_gas_actor.png)
 
 Open the new actor we created and add static mesh component and make it the default root.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_set_mesh.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/09_set_mesh.png)
 
 In the details panel of the static mesh component, add a cube mesh <Step text="1"/> and lower 
 it's scale to 0.25 <Step text="2"/>.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_mesh_settings.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/10_mesh_settings.png)
 
 Expand `TwistedBytes` interface functions and override `On Interactable Target Found` <Step text="1"/> 
 and `On Interactable Target Lost` <Step text="2"/>. Add `Print string` to debug the actors 
 as you can see in the image below in the `Event Graph`.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_target_found_lost.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/11_target_found_lost.png)
 
 Now to test our code press play.Remember that we set the range of the interaction in the `Passive ability` 
 to `300 cm`. So let's get in range and look and the cube, we should see the debug messages.
-![Plugin installation using the Epic Games Launcher](_static/img/11_target_found.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/12_target_found.png)
 
 When you look away from the cube the `On Interactable Target Lost` will be triggered and
  you should see the debug messages as in the image below.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_target_lost.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/13_target_lost.png)
 
 ## Extending Passive Ability Functionality
 
-Open the Interactable actor `GASActorBase` that we created and from the interface functions, override `Is Available For Interaction` add a print string <Step text="1"/> and return true <Step text="2"/> then let's press play and see what will happen.
+Open the Interactable actor `GASActorBase` that we created and from the interface functions, 
+override `Is Available For Interaction` add a print string <Step text="1"/> and 
+return true <Step text="2"/> then let's press play and see what will happen.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_available.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/14_available.png)
 
-As you can see `Is Available For Interaction` <Step text="1"/> was called before `On Interactable Target Found` <Step text="2"/> and all these other calls are happening <Step text="3"/> in the timer period as `Interact Passive` as long as you're looking to the interactable object.
+As you can see `Is Available For Interaction` <Step text="1"/> was called 
+before `On Interactable Target Found` <Step text="2"/> and all these other calls 
+are happening <Step text="3"/> in the timer period as `Interact Passive` as long as 
+you're looking to the interactable object.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_available_ingame.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/15_available_ingame.png)
 
-Let's set the return value of `Is Available For Interaction` to false <Step text="1"/> then hit play.
+Let's set the return value of `Is Available For Interaction` to false <Step text="1"/> then 
+hit play.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_available_false.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/16_available_false.png)
 
-The output log shows that only `Is Available For Interaction` is being called <Step text="1"/> and `On Interactable Target Found` is not triggered at all, this is because we are overriding the return value to false.
+The output log shows that only `Is Available For Interaction` is being called <Step text="1"/> 
+and `On Interactable Target Found` is not triggered at all, this is because we are overriding 
+the return value to false.
 
-![Plugin installation using the Epic Games Launcher](_static/img/11_available_false_ingame.png)
+![Plugin installation using the Epic Games Launcher](_static/img/passive/17_available_false_ingame.png)
