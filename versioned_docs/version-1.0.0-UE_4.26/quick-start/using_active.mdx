@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Using Active Ability
+title: Using Interact Active
 ---
 export const Step = ({children, text}) => {
     return <span style={{
@@ -15,7 +15,7 @@ export const Step = ({children, text}) => {
     </span>
 }
 
-## Creating the Interact Active Ability
+## Create Interact Active Ability
 
 To create Interact Active Ability you just need to right click in the 
 content browser and go to `TwistedBytes`->`Abilities`->`Interact Active` 
@@ -27,7 +27,7 @@ Open the Ability you just created and set the `Trace Channel` to be `Interactabl
  arm length is `300` which is 3 meters and we want the trace to be also 3 meters infront of the player character so 
  let's set `Max Range` to `600` <Step text="2"/>, to debug the ability set `Show Debug` to true and `Debug Show Duration` to `2.0` <Step text="3"/>.
 
-![Plugin installation using the Epic Games Launcher](_static/img/active/21a_settings_active.png)
+![Plugin installation using the Epic Games Launcher](_static/img/active/21b_settings.png)
 
 ## Notice
 
@@ -68,14 +68,9 @@ from the `TBIA_CharacterContext` then return the third person skeletal mesh as p
 ![Plugin installation using the Epic Games Launcher](_static/img/active/26_character_context.png)
 
 
-## Setup Interactable Actor
+## Interactable Actor
 
-Open the `GASActorBase` and override `Get Interaction Context` and make a struct based 
-on `TBIA_InteractionContext`.
-
-![Plugin installation using the Epic Games Launcher](_static/img/active/27_interaction_context.png)
-
-Open `Event Graph` and let's override `On Pre Interact`, `On Post Interact`, `On Cancel Interact` 
+Open `GasActorBase` and override `On Pre Interact`, `On Post Interact`, `On Cancel Interact` 
 and print their results to see them in action.
 
 ![Plugin installation using the Epic Games Launcher](_static/img/active/28_GasActorEvents.png)
@@ -84,9 +79,4 @@ Press Play and look at the cube then press the Interaction button, in our case w
 see the same result printed.
 
 ![Plugin installation using the Epic Games Launcher](_static/img/active/29_Events.png)
-
-
-
-
-
 
