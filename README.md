@@ -6,7 +6,7 @@
 📽 Tutorial Video (COMING SOON) <br/>
 📖 [Documentation](https://twistedbytes-net.github.io/TBIA-Documentation/)
 📆 [Roadmap](https://twistedbytes-net.github.io/TBIA-Documentation/roadmap) <br/>
-🛰 [Discord](https://discordapp.com/invite/CP4uZ69tne) <br/>
+🛰 [Discord](https://discord.twistedbytes.net) <br/>
 
 **TwistedBytes Interaction System** is a plugin for Unreal Engine that aims to solve a seemingly simple task - which is interactions. However, complexity grows
 quickly when trying to implement interaction gameplay mechanics that should support:
@@ -27,7 +27,7 @@ hurry. For an in-depth explanation about the plugin's concepts and architecture,
 events.
 
 If you happen to get stuck with our plugin or have any questions about how to use **TwistedBytes Interaction System**, you can:
-Join the community on our [Discord](https://discordapp.com/invite/CP4uZ69tne).
+Join the community on our [Discord](https://discord.twistedbytes.net).
 Check out the [FAQ](https://twistedbytes-net.github.io/TBIA-Documentation/docs/faq/) for common issues and how to solve them.
 
 If you think that you have found a 🐞 bug 🐞, please report it on our [GitHub Issue Tracker](https://github.com/twistedbytes-net/TBIA-Documentation/issues).

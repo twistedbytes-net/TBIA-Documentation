@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const urlTwistedBytesWebsite = "https://twistedbytes.net";
 const urlUnrealMarketplaceProduct_TBIA = "https://www.unrealengine.com/marketplace/en-US/product/fd69a887e4894a61b05809916c9ec2b2";
-const urlDiscordInviteLink = "https://discordapp.com/invite/CP4uZ69tne";
+const urlDiscordInviteLink = "https://discord.twistedbytes.net";
 const urlGitHubRepository = "https://github.com/twistedbytes-net/TBIA-Documentation";
 const urlGitHubIssueTracker = `${urlGitHubRepository}/issues`;
 
