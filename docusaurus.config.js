@@ -76,7 +76,7 @@ const config = {
                 },
 
                 gtag: {
-                    trackingID: 'C34LBB0BP6',
+                    trackingID: 'G-C34LBB0BP6',
                     anonymizeIP: true,
                 }
             }),
