@@ -58,6 +58,9 @@ const config = {
                         "1.0.0-UE_4.26": {
                             banner: "none"
                         },
+                        "1.1.0-UE_4.27": {
+                            banner: "none"
+                        },
                     },
 
                     remarkPlugins: globalRemarkPlugins,
