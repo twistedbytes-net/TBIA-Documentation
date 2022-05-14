@@ -1,29 +1,11 @@
-export function GetRoadmapStatus(children, text, colorLight, colorDark) {
-    return <div style={{
-        backgroundColor: colorDark,
-        color: colorLight,
-        border: '1px ' + colorLight + ' solid',
-        borderRadius: '5px',
-        padding: '.1rem .4rem',
-    }}>
-    {text}
-    </div>
-}
-
-export const Released = ({children}) => (GetRoadmapStatus(children, 'Released', "#afa", "#181"));
-
-export const InProgress = ({children}) => (GetRoadmapStatus(children, 'In Progress', "#ffa", "#882"));
-
-export const Planned = ({children}) => (GetRoadmapStatus(children, 'Planned', "#aff", "#288"));
-
-export const Researching = ({children}) => (GetRoadmapStatus(children, 'Researching', "#faa", "#822"));
+import {Released, InProgress, Planned, Researching} from '@site/src/lib/utils.mdx'
 
 # Roadmap
 
 | Plugin Version |     Status     | Release Date | Feature               | UE 5.0 | UE 4.27 | UE 4.26 |
 |:--------------:|:--------------:|:------------:|-----------------------|:------:|:-------:|:-------:|
 |     1.0.x      |  <Released/>   |  2022-04-30  | Core                  |   ✔    |    ✔    |    ✔    |
-|     1.1.x      | <InProgress/>  |      -       | Enhanced Input        |   ✔    |    ✔    |    ❌    |
-|     1.1.x      |   <Planned/>   |      -       | ASC Support in BP     |   ✔    |    ❌    |    ❌    |
+|     1.1.x      |  <Released/>   |  2022-05-14  | Enhanced Input        |   ✔    |    ✔    |    ❌    |
+|     1.1.x      | <InProgress/>  |      -       | ASC Support in BP     |   ✔    |    ❌    |    ❌    |
 |     1.2.x      |   <Planned/>   |      -       | Advanced Timed Inputs |   ✔    |    ✔    |    ✔    |
 

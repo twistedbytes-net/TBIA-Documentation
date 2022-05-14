@@ -56,13 +56,11 @@ const config = {
                     showLastUpdateTime: false,
                     includeCurrentVersion: false,
                     versions: {
-                        "1.1.0-UE_4.27": {
+                        "1.1.0": {
                             banner: "none",
-                            label: "1.1.0-UE_4.27+",
                         },
-                        "1.0.0-UE_4.26": {
+                        "1.0.0": {
                             banner: "none",
-                            label: "1.0.0-UE_4.26"
                         },
                     },
 
