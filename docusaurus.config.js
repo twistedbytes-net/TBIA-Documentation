@@ -39,7 +39,8 @@ const config = {
     favicon: "img/favicon.png",
 
     plugins: [
-        'docusaurus-plugin-sass'
+        'docusaurus-plugin-sass',
+        require.resolve("docusaurus-plugin-image-zoom"),
     ],
 
     presets: [
@@ -55,11 +56,13 @@ const config = {
                     showLastUpdateTime: false,
                     includeCurrentVersion: false,
                     versions: {
-                        "1.0.0-UE_4.26": {
-                            banner: "none"
-                        },
                         "1.1.0-UE_4.27": {
-                            banner: "none"
+                            banner: "none",
+                            label: "1.1.0-UE_4.27+",
+                        },
+                        "1.0.0-UE_4.26": {
+                            banner: "none",
+                            label: "1.0.0-UE_4.26"
                         },
                     },
 
@@ -206,6 +209,18 @@ const config = {
                 theme: lightCodeTheme,
                 darkTheme: darkCodeTheme,
             },
+
+            zoom: {
+                selector: '.markdown :not(em) > img',
+                config: {
+                    // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+                    margin: 64,
+                    background: {
+                        light: 'rgb(255, 255, 255)',
+                        dark: 'rgb(50, 50, 50)',
+                    }
+                }
+            }
         }),
 };
 
