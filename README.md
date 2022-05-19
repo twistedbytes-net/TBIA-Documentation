@@ -3,7 +3,7 @@
 📺 [Trailer](https://youtu.be/6LumTyC_160) <br/>
 🎮 [Playable Demo](https://drive.google.com/drive/folders/12lCDG6TGoBTreHeardwIId3YxiQYlmP7?usp=sharing) <br/>
 🔌 [Demo Unreal Project](https://drive.google.com/drive/folders/1I7TXOPM-9tHABdhWqy58TAR6-lenSy1E?usp=sharing) (PLUGIN REQUIRED) <br/>
-📽 Tutorial Video (COMING SOON) <br/>
+📽 [Tutorial Video](https://www.youtube.com/watch?v=sZjdo1ueH-0) <br/>
 📖 [Documentation](https://twistedbytes-net.github.io/TBIA-Documentation/)
 📆 [Roadmap](https://twistedbytes-net.github.io/TBIA-Documentation/roadmap) <br/>
 🛰 [Discord](https://discord.twistedbytes.net) <br/>
@@ -36,6 +36,10 @@ If you think that you have found a 🐞 bug 🐞, please report it on our [GitHu
 
 **Features:**
 
+**v1.1**
+- Enhanced Input System: Bind any Input Actions to Gameplay Abilities
+
+**v1.0**
 - Built on top of GAS.
 - Fully usable and extendable in Blueprints and C++.
 - Easy to use and integrate, even for non GAS-users
