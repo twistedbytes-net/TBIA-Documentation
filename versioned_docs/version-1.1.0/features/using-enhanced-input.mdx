@@ -47,7 +47,16 @@ Select the `Input Action` as in <Step text="2"/>, after that set `TBIA.Input.Int
 
 ## Setup Player Character
 
-Open `Player Character` select *TBIA_Interaction Component* <Step text="1"/>, go to *Details panel* and under `TwistedBytes | Interaction | Config` set *Input Consumer* <Step text="2"/> to `TBIA Enhanced Input Component` Lastly set `GAS Enhanced Input Mapping` as in <Step text="3"/>.
+Open `Player Character` select *TBIA_Interaction Component* , go to *Details panel* and under `TwistedBytes | Interaction | Config` set *Input Consumer* <Step text="2"/> to `TBIA Enhanced Input Component` Lastly set `GAS Enhanced Input Mapping` as in <Step text="3"/>.
 
 ![Setup Player Character](_static/img/enhanced_input/06_select_asset.png)
 
+## Setup Custom Abilities
+
+In order to add new abilities and bind them to specific actions like *GA_Run* that we have in the demo project, 
+Open *GAS Enhanced Input Mapping* as you can see on <Step text="1"/> this input tag is already added to the
+ `Interact Active Ability's CDO`. This means that when you add a new mapping for *GA_Run* and after setting the *Input Action*
+ and the *Gameplay Ability*, the input tag you set like in <Step text="2"/> should be also added to *GA_Run* in the 
+*Ability Tags* <Step text="3"/> as shown in the image below.
+
+![Setup Custom Abilities](_static/img/enhanced_input/07_Input_tags.png)
