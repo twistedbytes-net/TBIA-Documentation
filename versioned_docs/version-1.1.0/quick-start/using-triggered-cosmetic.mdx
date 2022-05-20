@@ -1,0 +1,86 @@
+---
+sidebar_position: 7
+title: Using Triggered Interaction Cosmetic
+---
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Create Triggered Interaction Cosmetic
+
+To create a *Triggered Interaction Cosmetic* ability, simply right-click in the *Content Browser*
+and select `TwistedBytes | Abilities | Triggered Interaction Cosmetic` as shown in the image below.
+
+Name the newly created asset `TriggeredInteractionCosmetic`.
+
+![Create Triggered Interaction Cosmetic Ability](_static/img/triggered_cosmetic/01_create_ability.png)
+
+
+## Setup Player Character
+
+Open `ThirdPersonCharacter`, select `TBIA Interaction Component` and in the *Details Panel* add `TriggeredInteractionCosmetic` to the array named 
+`Grant Abilities on Start`.
+
+:::note
+This will grant the ability to the `ThirdPersonCharacter` so it can be activated later on.
+:::
+
+![Create Triggered Interaction Cosmetic Ability](_static/img/triggered_cosmetic/01a_grant_to_player.png)
+
+
+## Create Interactable Actor
+
+For an easier implementation, we are going to duplicate the `GASActorBase` that we created earlier [here](/docs/quick-start/using-passive) to make use 
+of what we setup before. To do that, navigate to `GASActorBase` <Step text="1"/> and *right-click* then click on *Duplicate* <Step text="2"/>.
+
+Name this newly created asset `GASActor_Pickup`.
+
+:::note
+We are going to create a pickup object that will activate Triggered Interaction Cosmetic on *Player Character* when it overlaps with `GASActor_Pickup`.
+:::
+
+![Create GASActor_Pickup](_static/img/triggered_cosmetic/02_duplicate.png)
+
+Open the newly created asset, and under *Components Panel* click on `+Add Component` <Step text="1"/> then add `Sphere Collision` component <Step text="2"/> 
+and name it `Sphere`. After that go to the details panel of the `Sphere` and increase the *Sphere Radius* variable <Step text="3"/> to something around `150`.
+
+![Setup GASActor_Pickup Collision](_static/img/triggered_cosmetic/03_setup_actor_pickup.png)
+
+Now *right-click* on `Sphere` <Step text="1"/> click on `Add Event` <Step text="2"/> and choose `Add OnComponentBeginOverlap` <Step text="3"/>.
+
+![Setup GASActor_Pickup Events](_static/img/triggered_cosmetic/04_collision_sphere.png)
+
+In `Event Graph` you can see now the event `OnComponentBeginOverlap`, cast the `Other Actor` variable to `ThirdPersonCharacter` and get the reference of
+`TBIA Interaction Component` and from there you get `ASCOwner` variable . Check if the actor is valid then we execute 
+`Send Gameplay Event to Interacting Actor` and set all variables as follows: 
+- Interacted Actor : `ASCOwner` <Step text="1"/>
+- Event Tag : `TBIA.Interaction.Triggered.Cosmetic` <Step text="2"/>
+- Interacting Actor : `Blueprint Self`.
+
+:::note
+`ASCOwner` is a reference to the actor holding `TBIA Ability System Component` which might be the *Player Character* or *Player State*
+depending on your project.
+
+In Demo project we showed how to get `ASCOwner` using *BluePrint Interface* which is a better approach than casting, for tutorial purposes and 
+not to make it very long we took this shortcut.
+:::
+
+From `Event On End Interaction` check if the interaction ended in normal execution or it is been canceled, then call `Switch Has Authority`
+and only if true we destroy `GASActor_Pickup`.
+
+![Setup GASActor_Pickup Send Gameplay Events](_static/img/triggered_cosmetic/05_send_gameplay_event.png)
+
+## Test Interactable Actor
+
+To test this interaction place couple of `GASActor_Pickup` in the level.
+
+![Test Interactable Actor](_static/img/triggered_cosmetic/06_place_level.png)
+
+Press *Play* button and let the character overlap with `GASActor_Pickup` and you can see it getting destroyed.
+
+:::note
+As you can see `ThirdPersonCharacter` played the *Grab Montage* that we setup [here](/docs/quick-start/using-animation-cosmetic) because we are using 
+the same *Interaction Context* from `GASActorBase`.
+:::
+
+![Play in Editor](_static/img/triggered_cosmetic/07_play.png)
+
+
