@@ -1,0 +1,52 @@
+---
+sidebar_position: 3
+title: Unreal Engine 5
+---
+import {Step, UE} from '@site/src/lib/utils.mdx'
+
+:::important Only available for Unreal Engine: <UE version="5.0"/>
+:::
+
+This integration guide will show you how to integrate *AGRPRO* with *TwistedBytes Interaction System*, so that
+you can use both in combination in your own projects.
+
+:::info
+This guide is meant to be a general integration guide that you can use as reference when integrating plugins from unreal engine marketplace which
+are mainly `NON-GAS` based plugins.
+:::
+
+## Enable Plugins in Project
+
+In your project, navigate to `Edit | Plugins` to open the *Plugins* tab.
+
+Make sure that both `AGR PRO` <Step text="1"/> and `TwistedBytes Interaction System` <Step text="2"/> show up and are enabled.
+
+![Enable Plugins](_static/img/AGRPRO_UE5/01_enable_plugins.png)
+
+
+## Setting up the Player Character
+
+Open your *Player Character* Blueprint (e.g. `AGRPRO_Character`). As you can see here in our example, we are using `AGR Character` as the parent class.
+
+Now, to add the interaction functionality to the *Player Character*, click on *Add* <Step text="1"/> in the
+*Components* tab and select the `TBIA_AbilitySystem` component <Step text="2"/> and `TBIA_interaction` component <Step text="3"/>.
+
+Switch to the `Class Settings` and scroll down to the *Interfaces* category. Click on *Add* <Step text="4"/> and
+select the `TBIA_Interactable` interface. It should now look like it is shown in <Step text="5"/>.
+
+Finally, compile and save the Blueprint.
+
+![AGRPRO Character setup](_static/img/AGRPRO_UE5/02_character_setup.png)
+
+Now you can go to `TBIA_InteractionComponent` <Step text="1"/> add your interaction abilities <Step text="2"/> 
+then setup your input <Step text="3"/> regarding the default input component you're using.
+
+![Player Character Interaction Setup](_static/img/AGRPRO_UE5/03_greant_abilities.png)
+
+:::note 
+For more info on how to configure interaction abilities you can start from [here](/docs/quick-start/using-passive) 
+:::
+
+Finally you can press *Play* and test.
+
+![Play Test Project](_static/img/AGRPRO_UE5/03_play.png)
