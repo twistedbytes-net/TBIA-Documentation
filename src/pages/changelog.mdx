@@ -2,6 +2,15 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 1.1.1 - [2022-07-09]
+- Added
+  - `Event Received Sync Type` for network synchronisation to TBIA Gameplay Abilities. Affects when `OnInteractionEventReceived` event is called.
+- Bugfix
+  - Fixed property name typo in TBIA Gameplay Abilities
+    - `OverrideBlendOutTimeFoCancelAbility` → `OverrideBlendOutTimeForCancelAbility`
+  - Allow to switch to last section in a montage when ability ends
+  - <UE version="5.0"/> <UE version="4.27"/> Potential crash on BeginPlay
+
 ### 1.1.0 - [2022-05-18]
 - Added
   - <UE version="5.0"/> <UE version="4.27"/> Support for Enhanced Input System
