@@ -8,6 +8,7 @@ title: Interact Active
 flowchart TB
     START(("\u2B24"))
     STOP(("\u2B24"))
+    Enum((" "))
     
     CANCEL_ABILITY[[Cancel Ability]]
     END_ABILITY[[End Ability]]
@@ -15,6 +16,10 @@ flowchart TB
     B[[Commit Ability]]
     D[[Get Interactable Target]]
     F>Validate Pre Interact]
+    Y>C++ Functions]
+    G[[Hit Result]]
+    I>Custom Trace For Interact Active Ability]
+    V>Proximity]
     H>Is Blocked For Interaction]
     J>Get Interaction Context]
     K[/Activate <br/> Interaction Animation <br/> Loop/]
@@ -34,8 +39,16 @@ flowchart TB
     
     B --> |Success| D
     B --> |Failed| CANCEL_ABILITY
-    D --> |Target Hit| F
-    D --> |No Target| CANCEL_ABILITY
+    D --> |Trace Start Location Type| Enum
+    Enum -.-> |Center of Camera <br/> Socket on Character's Mesh <br/> Cursor| Y
+    Enum -.-> |Custom Trace| I
+    Enum -.-> |No Trace| V
+    Y --> G
+    I --> G
+    V --> |Target Hit| F
+    G --> |Target Hit| F
+    G --> |No Target| V
+    V --> |No Target| CANCEL_ABILITY
     F --> |Not Valid| CANCEL_ABILITY
     F --> |Validated| H
     H --> |Blocked| CANCEL_ABILITY
@@ -70,7 +83,6 @@ flowchart TB
 
             B
             D
-            F
             H
             J
             K
@@ -88,7 +100,22 @@ flowchart TB
             T
             W
             X
+
+        subgraph sub_trace [ ]
+            direction TB
+    
+            Enum
+            F
+            G
+            Y
+            I
+            V
+
         end
+
+        end
+
+
         
         subgraph sub_cancel [ ]
             direction TB
@@ -103,12 +130,16 @@ flowchart TB
     classDef sty_start fill:#A2C3FB,color:#A2C3FB,stroke-width:2px,stroke:#3866B5;
     classDef sty_stop fill:#A2C3FB,color:#3866B5,stroke-width:4px,stroke:#3866B5;
     classDef sty_subgraph_transparent fill:#0000,stroke:#0000;
+    classDef sty_enum fill:#A2C3FB,color:#A2C3FB,stroke-width:2px,stroke:#3866B5;
     
     class START sty_start;
     class STOP sty_stop;
+    class Enum sty_enum;
     class sub_container sty_subgraph_transparent;
     class sub_main sty_subgraph_transparent;
     class sub_cancel sty_subgraph_transparent;
+    class sub_trace sty_subgraph_transparent;
+
 ```
 
 ## Event OnEndAbility
