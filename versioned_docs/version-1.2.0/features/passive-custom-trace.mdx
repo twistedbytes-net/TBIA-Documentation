@@ -7,16 +7,17 @@ import {Step, UE} from '@site/src/lib/utils.mdx'
 
 ## Project Setup
 
-In order to show a use case for the custom trace functionality, we will create a new project based on Unreal Engine's *Top Down Template*.
+In order to show a use-case for the custom trace functionality, we will create a new project based on Unreal Engine's *Top Down Template*.
 
 :::info
-To shorten this guide, you can refer to the *Quick Start* guide for initial setup [here](https://twistedbytes-net.github.io/TBIA-Documentation/docs/quick-start/using-passive).
+To shorten this guide, you can refer to the *Quick Start* guide for initial setup [here](/docs/quick-start/using-passive).
 :::
 
 ## Passive Ability Setup
 
-Open the passive ability inherited from *TBIA_GAInteractPassive* and go to `Trace Start Location Type` and set it to `Custom Trace`<Step text="1"/>, 
-as shown in the image below.
+Open your *Passive Interact* ability *Blueprint* inherited from `TBIA_GAInteractPassive`.
+
+In the *Class Defaults* panel, set `Trace Start Location Type` to `Custom Trace`<Step text="1"/> as shown in the image below.
 
 ![Passive Ability Custom Trace Passive](_static/img/custom_trace/01_ability_passive.png)
 
@@ -25,29 +26,39 @@ as shown in the image below.
 Now open your *Player Character* class that should be inherited from *TBIA_GASCharacter*.
 
 :::note
-If you are using GASCompanion [this guide](https://twistedbytes-net.github.io/TBIA-Documentation/docs/integration_guides/gas-companion) can help you with integration. Or take a look at [this guide](https://twistedbytes-net.github.io/TBIA-Documentation/docs/integration_guides/unreal-engine-5-plugins) which works with UE5 only.
+If you are using GASCompanion, [this guide](/docs/integration_guides/gas-companion) will help you with integration.
+Or, take a look at [this guide](/docs/integration_guides/unreal-engine-5-plugins) which works with UE5 only.
 :::
 
-In *MyBlueprint* panel on the left side <Step text="1"/>, search for *Custom Trace for Interact Passive Ability* it will appear
-under `Twisted Bytes | Interaction | Events`<Step text="2"/>. Right click on the function and click on *Implement Event* <Step text="3"/>.
+In the *MyBlueprint* panel on the left side <Step text="1"/>, search for *Custom Trace for Interact Passive Ability*.
+You can find it under `Twisted Bytes | Interaction | Events` <Step text="2"/>.
+Right-click on the function name and select *Implement Event* <Step text="3"/>.
 
 ![Character Setup Custom Trace](_static/img/custom_trace/02_custom_trace_passive.png)
 
 A new *Blueprint* graph will open to implement the custom logic for this function.
 
-In this example we will trace for *Interactable Actors* under the cursor by querying the object type `Interactable`. Then return the hit result of the trace and if the *Interactable Actor* that we hit is available for interaction or not. All logic can be seen in the image below.
+In this example we will trace for *Interactable Actors* under the player's cursor by querying the object type `Interactable`.
+
+The function *Get Hit Result Under Cursor for Objects* returns us a *Hit Result* that we want to return at the end of our function.
+We also need to return a boolean value whether this object is currently available for interaction or not. In order to get this
+information we make use of the handy function *Is Available for Interaction*.
+
+The completed logic in *Blueprints* is shown in the image below.
 
 ![Character Setup Cursor Trace Passive](_static/img/custom_trace/03_cursor_trace_passive.png)
 
 ## Interactable Actor
 
-Here we will use from our [demo project](https://drive.google.com/drive/folders/1I7TXOPM-9tHABdhWqy58TAR6-lenSy1E?usp=sharing)
-*BP_ShieldCell_item* which is inherited from `TBIA_GASActorBase`. Just place couple of these *Actors* in the level to test the interaction.
+Here we will use *BP_ShieldCell_item* from our [demo project](https://drive.google.com/drive/folders/1I7TXOPM-9tHABdhWqy58TAR6-lenSy1E?usp=sharing)
+which is inherited from `TBIA_GASActorBase`. Just place a couple of these *Actors* in your level to test interactions.
 
 ![Interactable Actor Setup](_static/img/custom_trace/04_place_in_level.png)
 
 ## Play
 
-Click on *Play* and hover your mouse over the *Interactable Actors* in the map, Then you will see that the custom trace worked as intended.
+Click on *Play* and hover your mouse over the *Interactable Actors* in the map.
+
+You will see that the custom trace implementation works as intended.
 
 ![Play](_static/img/custom_trace/05_play_passive.png)
