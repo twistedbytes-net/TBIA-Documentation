@@ -36,6 +36,12 @@ If you think that you have found a 🐞 bug 🐞, please report it on our [GitHu
 
 **Features:**
 
+**v1.2**
+- Proximity Interaction.
+- Cursor interaction for Top-Down games.
+- Custom Tracing for passive and active abilities.
+- BugFix: `IsAvailableForInteraction` in active abilities will now be called properly.
+
 **v1.1**
 - Enhanced Input System: Bind any Input Actions to Gameplay Abilities
 

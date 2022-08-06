@@ -2,6 +2,20 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 1.2.0 - [2022-08-06]
+- Added
+  - Proximity Interaction.
+  - Cursor interaction for Top-Down games.
+  - Custom Tracing for passive and active abilities.
+  - `CustomTraceForInteractPassiveAbility` allows for custom tracing in "TBIA_GAInteractPassive".
+  - `CustomTraceForInteractActiveAbility` allows for custom tracing in "TBIA_GAInteractActive".
+  - `GetInteractingActors` gets all the current interacting actors with a specific component on an interactable actor.
+  - Completed documentation for all Blueprint nodes and variables.
+- Removed
+  - <UE version="4.27"/> <UE version="5.0"/> <code>OnInteractableTargetFound</code> no longer returns <code>HitResult</code> and <code>bIsTarget</code>.
+- BugFix
+  - `IsAvailableForInteraction` in active abilities will now be called properly.
+
 ### 1.1.1 - [2022-07-09]
 - Added
   - `Event Received Sync Type` for network synchronisation to TBIA Gameplay Abilities. Affects when `OnInteractionEventReceived` event is called.
