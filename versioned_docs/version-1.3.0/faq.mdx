@@ -3,5 +3,50 @@ sidebar_position: 6
 title: FAQ
 ---
 
-:::info
-None so far
+## Question 1
+
+ Q: Do you offer the source code with the plugin ?
+
+ A: Yes of course, the plugin comes with full source code once you buy it from the MarketPlace.
+
+## Question 2
+
+Q: Are there any tick events in interactable objects? Will it affect performance if I have 1000+ of interactable objects in my level ?
+
+A:  Interactable objects never tick. They only execute logic when being interacted with which is very performant. Additionally, we will make tutorials on how to use light-weight instances with our plugin.
+
+## Question 3
+
+Q: Does it also work when 2 objects are very close (almost overlapping) ?
+
+A: Interactables are detected by executing a line trace which will return only one object at a time.
+
+## Question 4
+
+Q: Is there any reason to buy this product when there are similar ones, but free? What is the selling feature of this plugin compared to the free ones ?
+
+A: As stated in the plugin description, one of the main features is multiplayer support with client-prediction. Also, our plugin extends GAS by adding support for replicated montages on multiple skeletal meshes.
+
+## Question 5
+
+Q: Triggered interactions are not visible / get out of sync.
+
+A: Make sure that `Replicates` is set to `true` in the respective actor's CDO.
+
+## Question 6
+
+Q: My proximity interactions are not working properly.
+
+A: Multiple issues might cause proximity interactions to fail:
+  * Make sure that your interactable actor object type is the same as the object type you are tracing for in the proximity settings.
+  * Check if your actor have `TBIA_Interactable` interface.
+  * Make sure that the object interaction priority settings are correct.
+
+## Question 7
+
+Q: *On Interactable Target Found* event is not being called.
+
+A: Multiple issues might cause to this:
+  * Check if `IsAvailableForInteraction` interface function is overridden and returns true.
+  * Make sure that `IsBlockedForInteraction` interface function is overridden and returns false.
+  * Lastly see if `IsInteractionStilValid` interface function is overridden and returns true.

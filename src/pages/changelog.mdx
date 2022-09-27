@@ -2,6 +2,23 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 1.3.0 - [2022-09-xx]
+
+- Added
+  - New input action for enhanced input component (Input trigger multiple tap).
+  - Interaction based on holding the input(PostInteract will be called when the input is released).
+  - Interaction based on Gameplay events(PostInteract will be called when gameplay event received is triggered on specific tag).
+  - `CheckInteractionTimerPeriod` and `ObjectCheckInteractionTimerPeriod` is now in the "InteractionContext" struct.
+  - New argument for "IsInteractionStillValid" that takes the task instance name that is calling this function.
+- Changed
+  - `IsInteractionStillValid` in "TBIA_GAInteractAnimation" is now being called on the "Avatar Actor" and not on the "Interacted Actor".
+- Removed
+  - `CheckInteractionTimerPeriod` is removed from the "TBIA_GAInteractActive" and "TBIA_GAObjectInteractionTimed".
+- BugFix
+  - Ability Tasks now are activated properly.
+  - "CheckInteractionWhileWaiting" Ability task now calls `PerformCheck` function immediately after activating the timer.
+  - "TBIA_GAObjectInteractionTimed" can call "IsInteractionStillValid" even if there is no anim montage set using `ObjectCheckInteractionTimerPeriod` for timer interval.
+
 ### 1.2.0 - [2022-08-06]
 - Added
   - Proximity Interaction.
