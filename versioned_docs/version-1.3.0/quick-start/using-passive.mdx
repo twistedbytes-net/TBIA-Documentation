@@ -70,6 +70,10 @@ component by dragging and dropping it onto `DefaultSceneRoot` as shown in the im
 Select the `StaticMesh` in the *Components* tab. Then, in the *Details* tab, assign `1M_Cube_Chamfer` to the
 `Static Mesh` property <Step text="1"/> and lower its scale to `0.25` for all three axis <Step text="2"/>.
 
+:::info
+Make sure to set the *Object Response* on the `Interactable` trace channel to *blocked* for the `StaticMesh`.
+:::
+
 ![Mesh Settings](_static/img/passive/10_mesh_settings.png)
 
 In the `My Blueprint` tab in the lower-left, expand the `TwistedBytes` interface functions and override
