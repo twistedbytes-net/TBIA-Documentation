@@ -36,6 +36,12 @@ If you think that you have found a 🐞 bug 🐞, please report it on our [GitHu
 
 **Features:**
 
+**v1.3**
+- New input action for enhanced input component (Input trigger multiple tap)
+- Interaction based on holding the input or Gameplay Events
+- Interactable actors can now be inherited from Pawns as well as Characters
+- Bug fixes
+
 **v1.2**
 - Proximity Interaction.
 - Cursor interaction for Top-Down games.
