@@ -3,50 +3,34 @@ sidebar_position: 6
 title: FAQ
 ---
 
-## Question 1
+## Do you offer the source code with the plugin?
+Yes of course, the plugin comes with full source code once you buy it from the MarketPlace.
 
- Q: Do you offer the source code with the plugin ?
+## Are there any tick events in interactable objects?
+Interactable objects never tick. They only execute logic when being interacted with which is very performant.
+Performance will not be affected even if you have 1000+ of interactable objects in your level.
 
- A: Yes of course, the plugin comes with full source code once you buy it from the MarketPlace.
+Additionally, we will make tutorials on how to use light-weight instances with our plugin.
 
-## Question 2
+## Do interactions also work when two objects are very close to each other (almost overlapping)?
+Yes, interactables are detected by executing a line trace which will return only one object at a time.
 
-Q: Are there any tick events in interactable objects? Will it affect performance if I have 1000+ of interactable objects in my level ?
+## Why should I buy this product when there are similar ones that are free?
+As stated in the plugin description, one of the main features is multiplayer support with client-prediction.
+Also, our plugin extends GAS by adding support for replicated montages on multiple skeletal meshes.
 
-A:  Interactable objects never tick. They only execute logic when being interacted with which is very performant. Additionally, we will make tutorials on how to use light-weight instances with our plugin.
+## Why are triggered interactions not visible / get out of sync?
+Make sure that `Replicates` is set to `true` in the respective actor's CDO.
 
-## Question 3
-
-Q: Does it also work when 2 objects are very close (almost overlapping) ?
-
-A: Interactables are detected by executing a line trace which will return only one object at a time.
-
-## Question 4
-
-Q: Is there any reason to buy this product when there are similar ones, but free? What is the selling feature of this plugin compared to the free ones ?
-
-A: As stated in the plugin description, one of the main features is multiplayer support with client-prediction. Also, our plugin extends GAS by adding support for replicated montages on multiple skeletal meshes.
-
-## Question 5
-
-Q: Triggered interactions are not visible / get out of sync.
-
-A: Make sure that `Replicates` is set to `true` in the respective actor's CDO.
-
-## Question 6
-
-Q: My proximity interactions are not working properly.
-
-A: Multiple issues might cause proximity interactions to fail:
-  * Make sure that your interactable actor object type is the same as the object type you are tracing for in the proximity settings.
-  * Check if your actor have `TBIA_Interactable` interface.
+## Why are my proximity interactions not working properly?
+Multiple issues might cause proximity interactions to fail:
+  * Make sure that your interactable actor object type is the same as the object type you are tracing for in the
+    proximity settings.
+  * Check if your actor implements the `TBIA_Interactable` interface.
   * Make sure that the object interaction priority settings are correct.
 
-## Question 7
-
-Q: *On Interactable Target Found* event is not being called.
-
-A: Multiple issues might cause to this:
-  * Check if `IsAvailableForInteraction` interface function is overridden and returns true.
-  * Make sure that `IsBlockedForInteraction` interface function is overridden and returns false.
-  * Lastly see if `IsInteractionStilValid` interface function is overridden and returns true.
+## Why is the *On Interactable Target Found* event is not triggered?
+Multiple issues might cause to this:
+  * Check if the `IsAvailableForInteraction` interface function is overridden and returns `true`.
+  * Make sure that the `IsBlockedForInteraction` interface function is overridden and returns `false`.
+  * Lastly, see if the `IsInteractionStilValid` interface function is overridden and returns `true`.
