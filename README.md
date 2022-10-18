@@ -3,7 +3,7 @@
 📺 [Trailer](https://youtu.be/6LumTyC_160) <br/>
 🎮 [Playable Demo](https://drive.google.com/drive/folders/12lCDG6TGoBTreHeardwIId3YxiQYlmP7?usp=sharing) <br/>
 🔌 [Demo Unreal Project](https://drive.google.com/drive/folders/1I7TXOPM-9tHABdhWqy58TAR6-lenSy1E?usp=sharing) (PLUGIN REQUIRED) <br/>
-📽 [Tutorial Video](https://www.youtube.com/watch?v=sZjdo1ueH-0) <br/>
+📽 [Video Tutorials](https://www.youtube.com/watch?v=oSeIxjblP7w&list=PLLyOa9EQGJ4osSqY9aQmr1dUQu_bmHA0V) <br/>
 📖 [Documentation](https://twistedbytes-net.github.io/TBIA-Documentation)
 📆 [Roadmap](https://twistedbytes-net.github.io/TBIA-Documentation/roadmap) <br/>
 🛰 [Discord](https://discord.twistedbytes.net) <br/>
