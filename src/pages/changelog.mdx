@@ -2,53 +2,58 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
-### 1.3.0 - [2022-10-09]
-
+### 1.4.0 - [2022-11-24]
 - Added
-  - <UE version="4.27"/> <UE version="5.0"/> New input action for enhanced input component (Input trigger multiple tap).
-  - <UE version="4.27"/> <UE version="5.0"/> Interaction based on holding the input (PostInteract will be called when the input is released).
-  - <UE version="4.27"/> <UE version="5.0"/> Interaction based on Gameplay Events (PostInteract will be called when *Gameplay Event Received* is triggered on specific tag).
-  - `CheckInteractionTimerPeriod` and `ObjectCheckInteractionTimerPeriod` is now in the "InteractionContext" struct.
-  - New argument for "IsInteractionStillValid" that takes the task instance name that is calling this function.
-- Changed
-  - Interactable actors can now inherit from `ACharacter` or `APawn`.
-  - In Gameplay Ability `TBIA_GAInteractAnimation` there is now an option to call `IsInteractionStillValid` either on the *Interacting Actor* or *Interacted Actor*.
+    - Support for Unreal Engine 5.1
 - Removed
-  - `CheckInteractionTimerPeriod` is removed from the `TBIA_GAInteractActive` and `TBIA_GAObjectInteractionTimed` Gameplay Abilities.
+    - Support for Unreal Engine 4.26
+
+### 1.3.0 - [2022-10-09]
+- Added
+    - <UE version="4.27"/> <UE version="5.0"/> New input action for enhanced input component (Input trigger multiple tap).
+    - <UE version="4.27"/> <UE version="5.0"/> Interaction based on holding the input (PostInteract will be called when the input is released).
+    - <UE version="4.27"/> <UE version="5.0"/> Interaction based on Gameplay Events (PostInteract will be called when *Gameplay Event Received* is triggered on specific tag).
+    - `CheckInteractionTimerPeriod` and `ObjectCheckInteractionTimerPeriod` is now in the "InteractionContext" struct.
+    - New argument for "IsInteractionStillValid" that takes the task instance name that is calling this function.
+- Changed
+    - Interactable actors can now inherit from `ACharacter` or `APawn`.
+    - In Gameplay Ability `TBIA_GAInteractAnimation` there is now an option to call `IsInteractionStillValid` either on the *Interacting Actor* or *Interacted Actor*.
+- Removed
+    - `CheckInteractionTimerPeriod` is removed from the `TBIA_GAInteractActive` and `TBIA_GAObjectInteractionTimed` Gameplay Abilities.
 - BugFix
-  - Ability Tasks now are activated properly.
-  - Ability Task `CheckInteractionWhileWaiting` now calls `PerformCheck` function immediately after activating the timer.
-  - Gameplay Ability `TBIA_GAObjectInteractionTimed` can call `IsInteractionStillValid` even if there is no anim montage set using `ObjectCheckInteractionTimerPeriod` for timer interval.
+    - Ability Tasks now are activated properly.
+    - Ability Task `CheckInteractionWhileWaiting` now calls `PerformCheck` function immediately after activating the timer.
+    - Gameplay Ability `TBIA_GAObjectInteractionTimed` can call `IsInteractionStillValid` even if there is no anim montage set using `ObjectCheckInteractionTimerPeriod` for timer interval.
 
 ### 1.2.0 - [2022-08-06]
 - Added
-  - Proximity Interaction.
-  - Cursor interaction for Top-Down games.
-  - Custom Tracing for passive and active abilities.
-  - `CustomTraceForInteractPassiveAbility` allows for custom tracing in "TBIA_GAInteractPassive".
-  - `CustomTraceForInteractActiveAbility` allows for custom tracing in "TBIA_GAInteractActive".
-  - `GetInteractingActors` gets all the current interacting actors with a specific component on an interactable actor.
-  - Completed documentation for all Blueprint nodes and variables.
+    - Proximity Interaction.
+    - Cursor interaction for Top-Down games.
+    - Custom Tracing for passive and active abilities.
+    - `CustomTraceForInteractPassiveAbility` allows for custom tracing in "TBIA_GAInteractPassive".
+    - `CustomTraceForInteractActiveAbility` allows for custom tracing in "TBIA_GAInteractActive".
+    - `GetInteractingActors` gets all the current interacting actors with a specific component on an interactable actor.
+    - Completed documentation for all Blueprint nodes and variables.
 - Removed
-  - <UE version="4.27"/> <UE version="5.0"/> <code>OnInteractableTargetFound</code> no longer returns <code>HitResult</code> and <code>bIsTarget</code>.
+    - <UE version="4.27"/> <UE version="5.0"/> <code>OnInteractableTargetFound</code> no longer returns <code>HitResult</code> and <code>bIsTarget</code>.
 - BugFix
-  - `IsAvailableForInteraction` in active abilities will now be called properly.
+    - `IsAvailableForInteraction` in active abilities will now be called properly.
 
 ### 1.1.1 - [2022-07-09]
 - Added
-  - `Event Received Sync Type` for network synchronisation to TBIA Gameplay Abilities. Affects when `OnInteractionEventReceived` event is called.
+    - `Event Received Sync Type` for network synchronisation to TBIA Gameplay Abilities. Affects when `OnInteractionEventReceived` event is called.
 - Bugfix
-  - Fixed property name typo in TBIA Gameplay Abilities
-    - `OverrideBlendOutTimeFoCancelAbility` → `OverrideBlendOutTimeForCancelAbility`
-  - Allow to switch to last section in a montage when ability ends
-  - <UE version="5.0"/> <UE version="4.27"/> Potential crash on BeginPlay
+    - Fixed property name typo in TBIA Gameplay Abilities
+        - `OverrideBlendOutTimeFoCancelAbility` → `OverrideBlendOutTimeForCancelAbility`
+    - Allow to switch to last section in a montage when ability ends
+    - <UE version="5.0"/> <UE version="4.27"/> Potential crash on BeginPlay
 
 ### 1.1.0 - [2022-05-18]
 - Added
-  - <UE version="5.0"/> <UE version="4.27"/> Support for Enhanced Input System
-  - Integration guide with third-party plugins
+    - <UE version="5.0"/> <UE version="4.27"/> Support for Enhanced Input System
+    - Integration guide with third-party plugins
 - Bugfix
-  - <UE version="5.0"/> Added missing valid check for PlayerState in TBIA_InteractionComponent
+    - <UE version="5.0"/> Added missing valid check for PlayerState in TBIA_InteractionComponent
 
 ### 1.0.0 - [2022-04-30]
 - Initial release
