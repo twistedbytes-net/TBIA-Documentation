@@ -20,28 +20,7 @@ A new window will pop up where you need to specify the `Content` <Step text="1"/
 ![Migrate Content: Choose Content folder](_static/img/01b_migrate_content.png)
 
 ### Add Gameplay Tags
-Our plugin uses a *Gameplay Tag Data Table* asset that holds all mandatory tags needed for its core functionalities to work correctly in any project.
-Unfortunately, the previous migration action you executed within Unreal Editor does not migrate Gameplay Tags.
-
-The following steps will explain in detail how to add all required Gameplay Tags to your own project.
-
-In the *Content Browser*, select the plugin folder named `TwistedBytes_InteractionSystem Content` and navigate further into the `GAS` sub-folder.
-In this folder you will find the mentioned *Gameplay Tag Data Table* asset called `TBIA_GamePlayTags` <Step text="3"/>.
-
-This asset file needs to be added to the `GameplayTags` section of your project settings as shown in <Step text="4"/>.
-
-![GameplayTags Data Table asset](_static/img/02_game_play_tags.png)
-
-:::note
-In order to find the *Gameplay Tag Data Table* asset, you might first need to make the plugin folder visible by clicking on
-*View Options* <Step text="1"/> in the bottom right corner of the *Content Browser*.
-
-Make sure to check both `Show Plugin Content` and `Show Engine Content` <Step text="2"/>.
-:::
-
-You are now all set regarding Gameplay Tags!
-
-However, in the demo project we also set up some *Gameplay Tags*, so that we can demonstrate to you how to
+In the demo project we also set up some *Gameplay Tags*, so that we can demonstrate to you how to
 implement certain gameplay mechanics using our plugin. So, it is totally up to you if you want to follow the rest of the instructions in this subsection.
 
 Add these tags in project settings by writing them as shown in <Step text="1"/> and <Step text="2"/>.
