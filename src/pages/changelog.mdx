@@ -2,6 +2,16 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 1.5.1 - [2023-xx-xx]
+- Fixed
+    - Moved `Object Types` to `TwistedBytes|Interaction` category.
+    - `TBIA_InteractionComponent` will no longer clear previous input mappings when calling `InitializePlayerEnhancedInput` function.
+- Added
+    - Input Mapping Context Priority can be set in `TBIA_EnhancedInputMapping`.
+    - Print warnings when:
+        - `TBIA_CharacterContext` does not have a valid reference for the primary mesh.
+        - `TBIA_Interactable` interface is not implemented when activating passive or active abilities.
+
 ### 1.5.0 - [2023-01-16]
 - Added
     - Initializing ASC from the `Interaction component` is now optional (Default: True).
