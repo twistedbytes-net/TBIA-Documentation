@@ -2,6 +2,22 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 1.6.0 - [2023-09-12]
+- Added
+    - Support for Unreal Engine 5.3
+- Changed
+    - Using TObjectPtr in favor of raw pointers
+- Bugfix
+    - Interactions that are instant (time <= 0) can no longer get `InteractActive` Gameplay Ability stuck in an active state.
+    - Invalid reference for Pawns.
+- Removed
+    - Support for Unreal Engine 4.27
+    - Support for Unreal Engine 5.0
+
+### 1.5.2 - [2023-05-23]
+- Added
+  - Support for Unreal Engine 5.2
+
 ### 1.5.2 - [2023-04-27]
 - Removed
     - `FObjectInitializer` from `UTBIA_GameplayAbility` constructor.
