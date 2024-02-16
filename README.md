@@ -1,8 +1,8 @@
 # TwistedBytes Interaction System
 
 📺 [Trailer](https://youtu.be/6LumTyC_160) <br/>
-🎮 [Playable Demo](https://drive.google.com/drive/folders/12lCDG6TGoBTreHeardwIId3YxiQYlmP7?usp=sharing) <br/>
-🔌 [Demo Unreal Project](https://drive.google.com/drive/folders/1I7TXOPM-9tHABdhWqy58TAR6-lenSy1E?usp=sharing) (PLUGIN REQUIRED) <br/>
+🎮 [Playable Demo](https://static.twistedbytes.net/downloads/6fb3c34c-e6fd-7275-7388-574abc6389a1/TBIA%20Playable%20Demo/) <br/>
+🔌 [Demo Unreal Project](https://static.twistedbytes.net/downloads/7a42299c-6047-e1e8-5b98-c16ab1868b89/TBIA%20Demo%20Project/) (PLUGIN REQUIRED) <br/>
 📽 [Video Tutorials](https://www.youtube.com/watch?v=oSeIxjblP7w&list=PLLyOa9EQGJ4osSqY9aQmr1dUQu_bmHA0V) <br/>
 📖 [Documentation](https://twistedbytes-net.github.io/TBIA-Documentation)
 📆 [Roadmap](https://twistedbytes-net.github.io/TBIA-Documentation/roadmap) <br/>
