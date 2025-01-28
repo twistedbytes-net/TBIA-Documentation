@@ -2,11 +2,17 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 1.8.1 - [2025-01-28]
+- Changed
+    - <UE version="5.5"/> Use latest API introduced in UE 5.5
+- Fixed
+    - <UE version="5.5"/> Input handling
+
 ### 1.8.0 - [2024-11-26]
 - Added
-  - Support for Unreal Engine 5.5
+    - Support for Unreal Engine 5.5
 - Removed
-  - Support for Unreal Engine 5.2
+    - Support for Unreal Engine 5.2
 
 ### 1.7.0 - [2024-04-30]
 - Added
@@ -19,7 +25,7 @@ import {UE} from '@site/src/lib/utils.mdx'
     - Support for Unreal Engine 5.3
 - Changed
     - Using TObjectPtr in favor of raw pointers
-- Bugfix
+- Fixed
     - Interactions that are instant (time <= 0) can no longer get `InteractActive` Gameplay Ability stuck in an active state.
     - Invalid reference for Pawns.
 - Removed
