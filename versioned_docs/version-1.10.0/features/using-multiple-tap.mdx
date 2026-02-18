@@ -1,0 +1,32 @@
+---
+sidebar_position: 5
+title: Multiple Tap Input Action
+---
+import {Step, UE} from '@site/src/lib/utils.mdx'
+
+:::important Only available for Unreal Engine: <UE version="4.27"/> <UE version="5.0+"/>
+Your project should be using [TBIA_EnhancedInputComponent](/docs/features/using-enhanced-input).
+:::
+
+## What is a Multiple Tap Input Action?
+This type of input action allows developers to create custom interactions that require multiple taps
+in a short amount of time on the specified input key in order to trigger and start an interaction.
+
+## Creating an Input Action
+To create a new *Input Action*, right-click in the *Content Browser* and
+select `Input | Input Action` <Step text="1"/>.
+
+![Create Input Action](_static/img/enhanced_input/03_input_action.png)
+
+## Input Action Setup
+Now open the newly created *Input Action* and add a *Trigger* by clicking on the `+` icon <Step text="1"/>.
+
+Next, select `Multiple Taps` from the dropdown menu as input trigger <Step text="2"/>.
+
+You can customize your input action with these options below:
+* `Delay Between Taps` is the max delay time allowed between taps. <Step text="3"/>
+* `Trigger Limit` describes how many taps are required in order to trigger the input action. <Step text="4"/>
+* `Actuation Threshold` is the threshold at which this trigger should fire. <Step text="5"/>
+
+![Create Input Action](_static/img/multiple_tap/01-setup-trigger.png)
+
